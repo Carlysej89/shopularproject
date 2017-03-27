@@ -2,30 +2,34 @@
 <html lang='en' ng-app='shop'>
 <head>
   <meta charset="utf-8">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href='styles.css' rel='stylesheet'>
   <title>Shopular</title>
 </head>
 <body>
+  <h1>Shopular</h1>
   <main>
-
-
-
-
-
-    <table ng-controller='ShopController as shopctrl'>
+    <table ng-controller='ShopController as shopctrl' class='table table-striped'>
       <thead>
+
+        <th>Name</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Color</th>
+
       </thead>
       <tbody>
         <tr ng-repeat='inventory in shopctrl.inventory | orderBy: "name"'>
-          <td>{{inventory.name}}</td>
+          <td>  {{inventory.name}} </td>
           <td>
             {{shopctrl.showTotal(inventory)| currency: "$": "2"}}
             <img src='98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount === 0'>
           </td>
-          <td>{{inventory.quantity}}</td>
-          <td>{{inventory.color}}</td>
+          <td> {{inventory.quantity}}</td>
+          <td>{{inventory.color}} </td>
         </tr>
       </tbody>
-   </table>
+    </table>
 
 
   </main>
