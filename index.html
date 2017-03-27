@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang='en' ng-app='shop'>
+<head>
+  <meta charset="utf-8">
+  <title>Shopular</title>
+</head>
+<body>
+  <main ng-controller='ShopController as shopctrl'>
+
+
+
+
+
+    <table>
+      <header>
+
+        <ul>
+          <li ng-repeat='inventory in shopctrl.inventory | orderBy: "name"'>
+            {{inventory.name}} {{shopctrl.showTotal(inventory)}} {{inventory.quantity}} {{inventory.color}}
+            
+          </li>
+
+
+        </ul>
+
+     </header>
+   </table>
+
+
+  </main>
+  <footer ng-controller='ShopController as shopctrl'>
+    <p>That's all for now folks!</p>
+  </footer>
+
+  <script src='https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js'></script>
+  <script src='js/shop.module.js'></script>
+  <script src='js/shop.controller.js'></script>
+
+
+
+</body>
+</html>
