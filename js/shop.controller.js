@@ -30,9 +30,12 @@
       ];
 
   vm.showTotal = function showTotal(item){
-    return (item.price * vm.tax + item.price);
+    let price = item.price - item.discount;
+
+    return (price * vm.tax + price);
+
   };
-  
+
 }
 
 

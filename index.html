@@ -5,25 +5,26 @@
   <title>Shopular</title>
 </head>
 <body>
-  <main ng-controller='ShopController as shopctrl'>
+  <main>
 
 
 
 
 
-    <table>
-      <header>
-
-        <ul>
-          <li ng-repeat='inventory in shopctrl.inventory | orderBy: "name"'>
-            {{inventory.name}} {{shopctrl.showTotal(inventory)}} {{inventory.quantity}} {{inventory.color}}
-            
-          </li>
-
-
-        </ul>
-
-     </header>
+    <table ng-controller='ShopController as shopctrl'>
+      <thead>
+      </thead>
+      <tbody>
+        <tr ng-repeat='inventory in shopctrl.inventory | orderBy: "name"'>
+          <td>{{inventory.name}}</td>
+          <td>
+            {{shopctrl.showTotal(inventory)| currency: "$": "2"}}
+            <img src='98350f05-sale_2.png' alt='sale tag' ng-hide='inventory.discount === 0'>
+          </td>
+          <td>{{inventory.quantity}}</td>
+          <td>{{inventory.color}}</td>
+        </tr>
+      </tbody>
    </table>
 
 
