@@ -4,7 +4,9 @@
         .controller('ShopController', ShopController);
 
 
-
+  /**
+   * ShopController function should produce a list of items with added tax.
+   */
   function ShopController(){
     let vm = this;
 
@@ -28,7 +30,11 @@
   { "id": 683, "name": "pillow", "price": 27, "quantity": 10, "color": "black", "discount": 12 }
 
       ];
-
+  /**
+   * This function should give back the total price including the tax and discount
+   *
+   * @return {Number} this should return a number
+   */
   vm.showTotal = function showTotal(item){
     let price = item.price - item.discount;
 
