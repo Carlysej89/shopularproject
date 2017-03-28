@@ -38,13 +38,16 @@
   vm.showTotal = function showTotal(item){
     let price = item.price - item.discount;
 
-    return (price * (vm.tax + price));
+    return (price * (vm.tax + 1));
 
   };
+  /**
+   * This function should create a new item
+   * @param {Object} item This should create a new item and place them in our
+   * table.
+   */
   vm.addItem = function addItem(item){
-    if (typeof(item) !== 'object' || typeof(item.name)!== 'string' ||
-      typeof(item.price) !== 'number' || typeof(item.quantity) !== 'number' ||
-      typeof(item.color) !== 'string' || typeof(item.discount) !== 'number' ){
+    if (typeof(item) !== 'object' ){
       return;
   }
     vm.inventory.push({
@@ -52,7 +55,7 @@
       price: item.price,
       quantity: item.quantity,
       color: item.color,
-      discount: item.discount
+      discount:item.discount
     });
       vm.newItem = {};
     };

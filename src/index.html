@@ -9,12 +9,34 @@
 <body>
   <h1>Shopular</h1>
   <main ng-controller='ShopController as shopctrl'>
-    <form ng-submit='shopctrl.addItem(shopctrl.newItem)' name='addItem'>
-      <input type='text' placeholder='Item Name' ng-model='shopctrl.newItem.name'>
-      <input type='text' placeholder='Item Price'ng-model='shopctrl.newItem.price'>
-      <input type='text' placeholder='Item Color'ng-model='shopctrl.newItem.color'>
-      <input type='text' placeholder='Item Quantity' ng-model='shopctrl.newItem.quantity'>
-      <input type='text' placeholder='Item discount' ng-model='shopctrl.newitem.discount'>
+    <form name='addItem'
+          ng-submit='addItem.$valid && shopctrl.addItem(shopctrl.newItem)'
+          novalidate>
+      <input type='text'
+             name='item name'
+             placeholder='Item Name'
+             required
+             ng-model='shopctrl.newItem.name'>
+      <input type='price'
+             name='price'
+             placeholder='Item Price'
+             required
+             ng-model='shopctrl.newItem.price'>
+      <input type='text'
+             name='color'
+             placeholder='Item Color'
+             required
+             ng-model='shopctrl.newItem.color'>
+      <input type='number'
+             name='quantity'
+             placeholder='Item Quantity'
+             required
+             ng-model='shopctrl.newItem.quantity'>
+      <input type='number'
+             name='discount'
+             placeholder='Item Discount'
+             required
+             ng-model='shopctrl.newItem.discount'>
       <input type='submit' value='Submit'>
     </form>
     <table class='table table-striped'>
