@@ -1,7 +1,7 @@
 {
 "version": 3,
-"mappings": "AAAA,KAAK;EACH,MAAM,ECDM,iBAAiB;;ADG/B,MAAM;EACJ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI",
-"sources": ["sass/table.scss","sass/variable.scss"],
+"mappings": "AAAA,KAAK;EACH,MAAM,ECDM,iBAAiB;;ADG/B,MAAM;EACJ,KAAK,EAAE,GAAG;EACV,MAAM,EAAE,IAAI;;AELd,2BAA4B;EACxB,MAAM,EAAE,aAAa",
+"sources": ["sass/table.scss","sass/variable.scss","sass/form.scss"],
 "names": [],
 "file": "styles.css"
 }
