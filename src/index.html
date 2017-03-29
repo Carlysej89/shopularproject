@@ -48,17 +48,16 @@
     <table class='table table-striped'>
       <thead>
 
-        <th> <a href='#' ng-click='shopctrl.sortType = 'name'; shopctrl.sortReverse = !sortReverse'>Name</a>
-        </th>
-        <th> <a href='#' ng-click='shopctrl.sortType = 'price'; shopctrl.sortReverse = !sortReverse'>Price</a>
-        </th>
-        <th>  <a href='#' ng-click='shopctrl.sortType = 'quantity'; shopctrl.sortReverse = !sortReverse'>Quantity</a>
-        </th>
+        <th ng-click='shopctrl.changeSort("name")'>Name</th>
+
+        <th ng-click='shopctrl.changeSort("price")'>Price</th>
+
+        <th ng-click='shopctrl.changeSort("quantity")'>Quantity</th>
         <th>Color</th>
 
       </thead>
       <tbody>
-        <tr ng-repeat='inventory in shopctrl.inventory | orderBy:shopCtrl.sortType:sortReverse'>
+        <tr ng-repeat='inventory in shopctrl.inventory | orderBy:shopCtrl.sortType:shopctrl.sortReverse'>
           <td>  {{inventory.name}} </td>
           <td>
             {{shopctrl.showTotal(inventory)| currency: "$": "2"}}
