@@ -12,41 +12,47 @@
     <form name='addItem'
           ng-submit='addItem.$valid && shopctrl.addItem(shopctrl.newItem)'
           novalidate>
+      <p ng-show='additem.name.$touched && !addItem.name.$valid'> Please enter a name</p>
       <input type='text'
              name='item name'
              placeholder='Item Name'
              required
              ng-model='shopctrl.newItem.name'>
+
       <input type='price'
              name='price'
              placeholder='Item Price'
              required
              ng-model='shopctrl.newItem.price'>
+
       <input type='text'
              name='color'
              placeholder='Item Color'
              required
              ng-model='shopctrl.newItem.color'>
+
       <input type='number'
              name='quantity'
              placeholder='Item Quantity'
              required
              ng-model='shopctrl.newItem.quantity'>
+
       <input type='number'
              name='discount'
              placeholder='Item Discount'
              required
              ng-model='shopctrl.newItem.discount'>
+
       <input type='submit' value='Submit'>
     </form>
     <table class='table table-striped'>
       <thead>
 
-        <th> <a href="#" ng-click="inventoryCtrl.sortType = 'name'; sortReverse = !sortReverse">Name</a>
+        <th> <a href='#' ng-click='inventoryCtrl.sortType = 'name'; sortReverse = !sortReverse'>Name</a>
         </th>
-        <th> <a href="#" ng-click="inventoryCtrl.sortType = 'price'; sortReverse = !sortReverse">Price</a>
+        <th> <a href='#' ng-click='inventoryCtrl.sortType = 'price'; sortReverse = !sortReverse'>Price</a>
         </th>
-        <th>  <a href="#" ng-click="inventoryCtrl.sortType = 'quantity'; sortReverse = !sortReverse">Quantity</a>
+        <th>  <a href='#' ng-click='inventoryCtrl.sortType = 'quantity'; sortReverse = !sortReverse'>Quantity</a>
         </th>
         <th>Color</th>
 

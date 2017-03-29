@@ -11,7 +11,8 @@
 
      vm.tax = 0.0575;
      vm.newItem = {};
-
+     vm.sortType = 'price';
+     vm.sortReverse = false;
 
 
       vm.inventory = [
@@ -43,13 +44,20 @@
   };
   /**
    * This function should create a new item
-   * @param {Object} item This should create a new item and place them in our
-   * table.
+   * @param {Object} item Should have a name, price, quantity, color and discount
+   * @return {Void}
    */
   vm.addItem = function addItem(item){
     if (typeof(item) !== 'object' ){
       return;
   }
+    if(typeof(item.name) !== 'string' || item.name.length < 1){
+      return;
+    }
+    item.price = Number(item.price);
+    if(Number.isNan(item.price) ){
+      return;
+    }
     vm.inventory.push({
       name: item.name,
       price: item.price,
@@ -59,8 +67,7 @@
     });
       vm.newItem = {};
     };
-      vm.sortType = 'price';
-      vm.sortReverse = false;
+
   }
 
 }());
