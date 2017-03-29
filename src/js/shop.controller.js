@@ -67,7 +67,9 @@
     });
       vm.newItem = {};
     };
-
-  }
-
+    vm.changeSort = function changeSort(sortField) {
+      vm.sortType = sortField;
+      vm.sortReverse = !vm.sortReverse;
+  };
+}
 }());
