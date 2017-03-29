@@ -59,7 +59,8 @@
     });
       vm.newItem = {};
     };
-
+      vm.sortType = 'price';
+      vm.sortReverse = false;
   }
 
 }());
