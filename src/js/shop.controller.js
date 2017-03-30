@@ -2,7 +2,9 @@
   'use strict';
   angular.module('shop')
   .controller('ShopController', ShopController);
+
   ShopController.$inject = ['InventoryService'];
+
   /**
   * ShopController function should produce a list of items with added tax.
   */
@@ -25,11 +27,7 @@
       return (price * (vm.tax + 1));
 
     };
-    /**
-    * This function should create a new item
-    * @param {Object} item Should have a name, price, quantity, color and discount
-    * @return {Void}
-    */
+  
     vm.addItem = function addItem(item){
       InventoryService.addItemToInventory(item);
       vm.newItem = {};
