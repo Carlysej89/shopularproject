@@ -18,25 +18,25 @@
              placeholder='Item Name'
              required
              ng-model='shopctrl.newItem.name'>
-
+      <p ng-show='additem.price.$touched && !addItem.name.$valid'> Please enter a price</p>
       <input type='price'
              name='price'
              placeholder='Item Price'
              required
              ng-model='shopctrl.newItem.price'>
-
+      <p ng-show='additem.color.$touched && !addItem.name.$valid'> Please enter a name</p>       
       <input type='text'
              name='color'
              placeholder='Item Color'
              required
              ng-model='shopctrl.newItem.color'>
-
+      <p ng-show='additem.name.$touched && !addItem.name.$valid'> Please enter a name</p>
       <input type='number'
              name='quantity'
              placeholder='Item Quantity'
              required
              ng-model='shopctrl.newItem.quantity'>
-
+      <p ng-show='additem..$touched && !addItem.name.$valid'> Please enter a name</p>
       <input type='number'
              name='discount'
              placeholder='Item Discount'

@@ -5,24 +5,35 @@
   InventoryService.$inject = ['$location'];
 
   function InventoryService(){
-    let inventory = JSON.parse(localStorage.getItem('inventory')) || [];
+    let inventory = JSON.parse(localStorage.getItem('item')) || [];
 
-    function addInventory(inventory){
 
-      Inventory.push({
-        name: inventory.name,
-        price: inventory.price,
-        quantity: inventory.quantity,
-        color: inventory.color,
-        discount: inventory.discount
+
+    function addItemToInventory(item){
+      if (typeof(item) !== 'object' ){
+        return;
+      }
+      if(typeof(item.name) !== 'string' || item.name.length < 1){
+        return;
+      }
+      item.price = Number(item.price);
+      if(Number.isNaN(item.price) ){
+        return;
+      }
+      Item.push({
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+        color: item.color,
+        discount: item.discount
       });
-      localStorage.setItem('inventory', angular.toJson(inventory));
+      localStorage.setItem('item', angular.toJson(inventory));
     }
     function getAllInventory(){
       return inventory;
     }
     return {
-      addInventory: addInventory,
+      addItemToInventory: addItemToInventory,
       getAllInventory: getAllInventory
     };
   }
