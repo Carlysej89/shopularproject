@@ -1,0 +1,34 @@
+{
+  "name": "shopular",
+  "version": "1.0.0",
+  "description": "a shop with inventory",
+  "main": "build/js/shop.module.js",
+  "scripts": {
+    "test": "grunt karma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Carlysej89/shopularproject.git"
+  },
+  "author": "carlyse jordan",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Carlysej89/shopularproject/issues"
+  },
+  "homepage": "https://github.com/Carlysej89/shopularproject#readme",
+  "devDependencies": {
+    "angular-mocks": "^1.6.3",
+    "babel-preset-es2015": "^6.24.0",
+    "chai": "^3.5.0",
+    "grunt": "^1.0.1",
+    "grunt-babel": "^6.0.0",
+    "grunt-contrib-concat": "^1.0.1",
+    "grunt-karma": "^2.0.0",
+    "karma": "^1.5.0",
+    "karma-chai": "^0.1.0",
+    "karma-chrome-launcher": "^2.0.0",
+    "karma-coverage": "^1.1.1",
+    "karma-mocha": "^1.3.0",
+    "mocha": "^3.2.0"
+  }
+}
