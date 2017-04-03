@@ -25,11 +25,11 @@
         return;
       }
       inventory.push({
-        name: inventory.name,
-        price: inventory.price,
-        quantity: inventory.quantity,
-        color: inventory.color,
-        discount: inventory.discount
+        name: item.name,
+        price: item.price,
+        quantity: item.quantity,
+        color: item.color,
+        discount: item.discount
       });
       localStorage.setItem('item', angular.toJson(inventory));
     }
