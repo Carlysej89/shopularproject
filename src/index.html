@@ -2,14 +2,14 @@
 <html lang='en' ng-app='shop'>
 <head>
   <meta charset="utf-8">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
   <link href='styles.css' rel='stylesheet'>
   <title>Shopular</title>
 </head>
 <body>
   <h1>Shopular</h1>
   <main ng-controller='ShopController as shopctrl'>
-    <form name='addItem'
+    <form name='input item'
           ng-submit='addItem.$valid && shopctrl.addItem(shopctrl.newItem)'
           novalidate>
       <p ng-show='additem.name.$touched && !addItem.name.$valid'> Please enter a name</p>
@@ -24,19 +24,19 @@
              placeholder='Item Price'
              required
              ng-model='shopctrl.newItem.price'>
-      <p ng-show='additem.color.$touched && !addItem.name.$valid'> Please enter a name</p>
+      <p ng-show='additem.color.$touched && !addItem.name.$valid'> Please enter a color</p>
       <input type='text'
              name='color'
              placeholder='Item Color'
              required
              ng-model='shopctrl.newItem.color'>
-      <p ng-show='additem.name.$touched && !addItem.name.$valid'> Please enter a name</p>
+      <p ng-show='additem.quantity.$touched && !addItem.name.$valid'> Please enter a quantity</p>
       <input type='number'
              name='quantity'
              placeholder='Item Quantity'
              required
              ng-model='shopctrl.newItem.quantity'>
-      <p ng-show='additem..$touched && !addItem.name.$valid'> Please enter a name</p>
+      <p ng-show='additem.discount.$touched && !addItem.name.$valid'> Please enter a discount</p>
       <input type='number'
              name='discount'
              placeholder='Item Discount'
